@@ -51,10 +51,8 @@ Explore pinned repos on my profile for runnable examples and full instructions.
 [![Masterunix's GitHub Stats](https://github-readme-stats.vercel.app/api?username=masterunix&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)](https://github.com/masterunix)  
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=masterunix&layout=compact&theme=tokyonight&hide_border=true)](https://github.com/masterunix)  
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=masterunix&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)  
-[![Activity Graph](https://activity-graph.herokuapp.com/graph?username=masterunix&theme=react-dark&hide_border=true)](https://github.com/masterunix)  
+[![GitHub Streak](https://streak-stats.demolab.com/?user=masterunix)](https://git.io/streak-stats)
 
-[![Trophies](https://github-profile-trophy.vercel.app/?username=masterunix&theme=monokai&no-frame=true&margin-w=8)](https://github.com/masterunix)
 
 ---
 
