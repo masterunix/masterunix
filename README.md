@@ -3,7 +3,7 @@
 [![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https://vatsalgoyal.me&style=flat-square)](https://vatsalgoyal.me) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?style=flat-square&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/vatsal-goyal-05a896165)](https://www.linkedin.com/in/vatsal-goyal-05a896165) [![Email](https://img.shields.io/badge/Email-vatsalgoyal9999%40gmail.com-c14438?style=flat-square&logo=gmail&logoColor=white)](mailto:vatsalgoyal9999@gmail.com)  
 [![Follow on GitHub](https://img.shields.io/github/followers/masterunix?label=Follow&style=flat-square)](https://github.com/masterunix) [![GitHub Stars](https://img.shields.io/github/stars/masterunix?style=flat-square)](https://github.com/masterunix?tab=stars)
 
-I wish to train Deep Neural Nets on large datasets. I build pragmatic, design-forward software across web, mobile, AI, and systems. My focus is on shipping small, useful, well-documented projects you can run locally or deploy quickly.
+I build pragmatic, design-forward software across web, mobile, AI, and systems. My focus is on shipping small, useful, well-documented projects you can run locally or deploy quickly.
 I prefer clean interfaces, reproducible setups (Docker), and straightforward READMEs so others can fork and extend my work without friction.
 
 ---
