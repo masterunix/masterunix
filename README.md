@@ -73,6 +73,6 @@ I prefer clean interfaces, reproducible setups (Docker), and straightforward REA
 
 ---
 
-> "I value small, testable abstractions and good README-driven onboarding."
+> "Just do it."
 
 Last updated: May 10, 2026 • Profile: masterunix
