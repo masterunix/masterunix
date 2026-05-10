@@ -10,7 +10,7 @@ I prefer clean interfaces, reproducible setups (Docker), and straightforward REA
 
 ## 🚀 Spotlight — Featured Projects
 
-1. **Gleck — SOTA AI Agent**  
+1. **Gleck — AI Agent**  
    - An advanced AI Agent system built with **LangGraph**, **LangChain**, and **MCP**.
    - **Stack:** Python, PERN (PostgreSQL, Express, React, Node).
    - **Capability:** Manages daily life, performs deep research, and operates websites autonomously.
