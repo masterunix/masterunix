@@ -64,9 +64,9 @@ Next.js, React, TypeScript, Tailwind, Postgres (Neon), LangChain, LangGraph, MCP
 
 - The studio site is Next.js with no CSS framework, and the night sky behind it is a shader I wrote in raw GLSL. Switch to the light theme and the same sky looks like it was printed on paper.
 - Clients get their own portal to follow their project and message the studio, and partners get one too. There are no sign-ups. The studio issues every account.
-- Our first internal tool, rcisfeeder, turns every coding agent conversation (Claude Code, Codex, Antigravity) into a readable log in a per-project feedback store, so the next session knows what happened. It's the first piece of a toolchain for running client projects with coding agents.
+- Our internal tooling is a mix of AI-assisted tools, deterministic tools, helpers, authorisation and much more. It's how we run a website delivery service like no other. From Next.js to WordPress with Elementor, we do it all.
 
-Next.js, TypeScript, GLSL, Supabase, Python
+Next.js, TypeScript, WordPress, Elementor, GLSL, Supabase, Python
 
 ### PocketLM
 
@@ -151,7 +151,7 @@ Thanks for stopping by! If you're hiring, or want to build something together, [
 
 <img src="https://komarev.com/ghpvc/?username=masterunix&label=profile+views&color=8b5cf6&style=flat-square" alt="Profile views">
 
-<sub>Last updated 19 Oct 2026 · v3.1</sub>
+<sub>Last updated 19 Oct 2026 · v3.2</sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C3AED,100:2563EB&height=110&section=footer" width="100%" alt="">
 
