@@ -36,7 +36,7 @@ Next.js · React · TypeScript · Tailwind CSS · PostgreSQL (Neon) · LangChain
 ## Other projects
 
 - **[PocketLM][pocketlm]**: an experiment in how much of a language model's worldview comes from its data. I trained eight models on a MacBook, on posts from politically opposed Reddit communities: LiquidAI LFM2-1.2B fine-tuned with LoRA (on MLX and PEFT), and 124M-parameter GPT-2s trained from scratch with nanoGPT. For the from-scratch models, a FAISS semantic-deduplication pass built equal 200 MB corpora for each side. A React and Node front end talks to the Python model server over JSON-RPC to compare answers side by side. Weights are on [Hugging Face][pocketlm-hf].
-- **[GlobalFreight AI][globalfreight]**, built for the Intellithon challenge at AI-Fortnight 2026: a logistics platform in four levels, from a RAG policy assistant that cites its sources to an autonomous command centre where Planner, Executor and Auditor agents coordinate through an MCP server under hard safety rules (no more than three cancellations in any ten minutes). Flask, LangGraph, ChromaDB and Next.js 16, on Azure OpenAI with automatic fallback to Gemini.
+- **[GlobalFreight AI][globalfreight]**: built solo for a company-wide AI hackathon at Pratham Software (Intellithon, AI-Fortnight 2026), clearing all four rounds. A logistics platform in four levels, from a RAG policy assistant that cites its sources to an autonomous command centre where Planner, Executor and Auditor agents coordinate through an MCP server under hard safety rules (no more than three cancellations in any ten minutes). Flask, LangGraph, ChromaDB and Next.js 16, on Azure OpenAI with automatic fallback to Gemini.
 - **[vatsalgoyal.com][portfolio]**: my portfolio. Glass hexagons over a single WebGL shader, with no animation or 3D libraries. Next.js 16, React 19 and Tailwind CSS 4, with every page's content in Markdown files that are checked at build time. [Source][portfolio-src].
 - **[JobNest][jobnest]**: a job portal for job seekers, employers and admins, built during my internship at Xebia. MERN, JWT auth, Stripe and Razorpay payments, Socket.io notifications.
 - **[450 House of Sourdough][450]**: client work for an artisanal bakery in Jaipur. A storefront with WhatsApp checkout and a subscription program, plus a local-first Flask and SQLite system for orders, recurring deliveries and B2B accounts ([source][450-backend]).
@@ -48,7 +48,7 @@ Smaller things: [movie.fy][moviefy] (Flutter), [Flapper][flapper] (a Flappy Bird
 
 ## Experience
 
-- **Full-stack development intern**, [Pratham Software (PSI)][psi] · Jan – Jul 2026
+- **Full-stack development intern**, [Pratham Software (PSI)][psi] · Jan – Aug 2026. Built an internal resume and skill-database platform on the PERN stack (SSO, and a skill search managers use to staff projects), led three interns, and built GlobalFreight AI for the company-wide AI hackathon.
 - **IT consultant**, 450 House of Sourdough · Jun – Nov 2025. Built and deployed the bakery's web platform: online orders, payments and inventory.
 - **Full-stack intern**, Xebia · Jun – Jul 2025. Built JobNest.
 - **Part-time web developer**, Digispheres · Jul 2023 – Jul 2024. Built and deployed websites for clients.
