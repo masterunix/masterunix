@@ -166,7 +166,7 @@ Thanks for stopping by! If you're hiring, or want to build something together, [
 [pocketlm-hf]: https://huggingface.co/axe-net/PocketLM
 [gleck]: https://github.com/masterunix/gleck
 [globalfreight]: https://github.com/masterunix/FOURTH-AGENT
-[portfolio-src]: https://github.com/masterunix/portfolio-frontend
+[portfolio-src]: https://github.com/masterunix/portfolio-v2
 [jobnest]: https://github.com/masterunix/JobNest-v1
 [450]: https://450-hos-static.vercel.app
 [450-backend]: https://github.com/masterunix/450Backend
