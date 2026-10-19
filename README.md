@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C3AED,100:2563EB&height=180&section=header&text=Vatsal%20Goyal&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=36" width="100%" alt="Vatsal Goyal">
 
-<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=20&duration=3000&pause=900&color=8B5CF6&center=true&vCenter=true&width=640&lines=Full-stack+developer+from+Jaipur;Building+AxeSuite+and+RCIS;Open+to+full-stack+and+AI+roles;Computers+are+still+magic." alt="Full-stack developer from Jaipur, building AxeSuite and RCIS">
+<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=20&duration=3000&pause=900&color=8B5CF6&center=true&vCenter=true&width=640&lines=Full+Stack+and+AI+Developer;Building+AxeSuite+and+RCIS;Open+to+full-stack+and+AI+roles;Computers+are+still+magic." alt="Full Stack and AI Developer, building AxeSuite and RCIS">
 
 [![Portfolio][badge-portfolio]][portfolio] [![LinkedIn][badge-linkedin]][linkedin] [![Email][badge-email]][email] [![Hugging Face][badge-hf]][hf]
 
@@ -60,7 +60,7 @@ Next.js, React, TypeScript, Tailwind, Postgres (Neon), LangChain, LangGraph, MCP
 
 ### RCIS
 
-[RCIS][rcis] is my web development studio. We build websites and the systems behind them, like order management, dashboards and internal tools.
+[RCIS][rcis] is my web development studio, built around one idea: a website delivered in 10 minutes, with no lock-in, and a real developer who can step in and do the work whenever it's needed. We also build the systems behind websites, like order management, dashboards and internal tools.
 
 - The studio site is Next.js with no CSS framework, and the night sky behind it is a shader I wrote in raw GLSL. Switch to the light theme and the same sky looks like it was printed on paper.
 - Clients get their own portal to follow their project and message the studio, and partners get one too. There are no sign-ups. The studio issues every account.
@@ -76,10 +76,10 @@ How much of a model's worldview comes from its data? I trained eight small model
 
 ### FT7
 
-My own trading setup on [Flattrade](https://flattrade.in)'s API. FT7 itself is a live market viewer that I packaged as a Mac app with Electron. It shows every raw API reply next to the charts built from it, and it can only read, so it can't touch an order. Around it:
+An AI-enabled trading system on [Flattrade](https://flattrade.in)'s API. It uses AI to trade, inside hard limits on position size, trades per day and losses, and a single kill switch file blocks every script that can place an order. Around it:
 
+- a live market viewer I packaged as a Mac app with Electron, showing every raw API reply next to the charts built from it
 - a Python client, with a fix for a login bug in the NorenRestApi library
-- an intraday momentum bot with hard limits on position size, trades per day and losses, plus a single switch file that blocks every script able to place an order
 - an API recorder that called every endpoint and turned the replies into a PDF report, which is how I found the limit of 10 orders a second
 
 Orders go out through a Tailscale exit node on AWS, so they always come from the IP the broker whitelisted. Not public. Python, Electron, WebSockets, pandas, AWS, Tailscale
@@ -94,7 +94,7 @@ My personal AI agent, still in the works. The idea is that it keeps my resumes a
 - **[GlobalFreight AI][globalfreight]**: built solo for a company-wide AI hackathon at Pratham Software (Intellithon, AI-Fortnight 2026), where it cleared all four rounds. A logistics platform that goes from a RAG policy assistant up to Planner, Executor and Auditor agents running the network through an MCP server, under hard safety rules. Flask, LangGraph, ChromaDB, Next.js 16.
 - **[vatsalgoyal.com][portfolio]**: my portfolio. Glass hexagons over a single WebGL shader, no animation libraries. [Source][portfolio-src]
 - **[JobNest][jobnest]**: a job portal I built during my internship at Xebia. MERN, JWT auth, Stripe and Razorpay, Socket.io.
-- **[450 House of Sourdough][450]**: client work for a bakery in Jaipur. The storefront, plus a Flask and SQLite system for orders, subscriptions and B2B accounts ([source][450-backend]).
+- **[450 House of Sourdough][450]**: client work for a bakery. The storefront, plus a Flask and SQLite system for orders, subscriptions and B2B accounts ([source][450-backend]).
 - **AxeServer**: an old PC I turned into a 24/7 Ubuntu server on Tailscale. It's where I test agents like Gleck.
 - **AshaKiran**: a website for an NGO, built with React, Node and Postgres.
 - Smaller things: [movie.fy][moviefy] (Flutter), [Flapper][flapper] (a Flappy Bird-style game I packaged for iOS with Capacitor) and a [VS Code setup][vscode-dsa] that runs DSA code in seven languages with one shortcut.
@@ -103,13 +103,12 @@ My personal AI agent, still in the works. The idea is that it keeps my resumes a
 
 ## Experience
 
-- **Full-stack development intern**, [Pratham Software (PSI)][psi] · Jan to Aug 2026. Built an internal resume and skill-database platform on the PERN stack (SSO, and a skill search managers use to staff projects), led three interns, and built GlobalFreight AI for the company-wide AI hackathon.
+- **Full-stack development intern**, [Pratham Software (PSI)][psi] · Jan to Aug 2026. Worked on an internal application using the PERN stack (PostgreSQL, Express, React and Node).
 - **IT consultant**, 450 House of Sourdough · Jun to Nov 2025. Built and deployed the bakery's web platform: online orders, payments and inventory.
 - **Full-stack intern**, Xebia · Jun to Jul 2025. Built JobNest.
 - **Part-time web developer**, Digispheres · Jul 2023 to Jul 2024. Built and deployed websites for clients.
-- **Core team member**, JECRC Incubation Centre · 2022 to 2023. Represented the centre's NEC-winning team at IIT Bombay's E-Summit 2023 and helped run SISFS startup evaluation rounds.
 
-**Education:** B.Tech in Computer Science and Engineering (full-stack development specialization), JECRC University, Jaipur · 2022 to 2026
+**Education:** B.Tech in Computer Science and Engineering (full-stack development specialization) · 2022 to 2026
 
 ## Achievements and certifications
 
@@ -151,6 +150,8 @@ Thanks for stopping by! If you're hiring, or want to build something together, [
 <div align="center">
 
 <img src="https://komarev.com/ghpvc/?username=masterunix&label=profile+views&color=8b5cf6&style=flat-square" alt="Profile views">
+
+<sub>Last updated 19 Oct 2026 · v3.1</sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C3AED,100:2563EB&height=110&section=footer" width="100%" alt="">
 
