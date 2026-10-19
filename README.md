@@ -1,60 +1,115 @@
-# Hi, I'm Vatsal 👋
+<div align="center">
 
-I'm a full-stack developer in Jaipur, India. I build products end to end: the Postgres schema, the API, the interface, and lately the AI layer on top (agents, tool calling and MCP servers).
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C3AED,100:2563EB&height=180&section=header&text=Vatsal%20Goyal&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=36" width="100%" alt="Vatsal Goyal">
+
+<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=20&duration=3000&pause=900&color=8B5CF6&center=true&vCenter=true&width=640&lines=Full-stack+developer+from+Jaipur;Building+AxeSuite+and+RCIS;Open+to+full-stack+and+AI+roles;Computers+are+still+magic." alt="Full-stack developer from Jaipur, building AxeSuite and RCIS">
 
 [![Portfolio][badge-portfolio]][portfolio] [![LinkedIn][badge-linkedin]][linkedin] [![Email][badge-email]][email] [![Hugging Face][badge-hf]][hf]
 
-> **Open to full-stack and AI engineering roles.** Email is the fastest way to reach me: [vatsalgoyal9999@gmail.com][email].
+</div>
 
-## What I'm building: AxeSuite
+Hey, I'm Vatsal 👋 I build full-stack apps, and lately the AI side of them too: agents, tool calling and MCP servers. Most of my time goes into AxeSuite and my studio, RCIS.
 
-[AxeSuite][axesuite] is a productivity suite for computer-science students and engineers: seven web apps and a desktop app that share one sign-in, one Postgres database, one AI assistant and one design language. It's a solo project; I design, build and run all of it.
+> **I'm open to full-stack and AI engineering roles.** Email is the quickest way to reach me: [vatsalgoyal9999@gmail.com][email]
+
+## What I'm working on
+
+### AxeSuite
+
+A productivity suite for CS students and engineers, and the project I spend most of my time on. It's seven web apps and a desktop app that share one login, one Postgres database and one AI assistant. I build and run all of it myself.
 
 | App | What it does |
 | --- | --- |
-| [**AxeTasker**](https://tasker.axesuite.tech) | A week-by-week planner: dated task cards with timers and streaks, rich-text notes, templates, and links to items in the other apps |
-| [**AxeDSA**](https://dsa.axesuite.tech) | A coding-practice tracker for LeetCode, Codeforces and HackerRank problems, with a store of ready-made problem packs |
-| [**Axe Design**](https://design.axesuite.tech) | System-design practice: draw an architecture on a canvas, then a simulator load-tests it against latency, availability and budget targets |
-| [**AxeFeed**](https://feed.axesuite.tech) | One calm daily feed of blogs, newsletters and papers. Paste any link and it finds the feed, or watches sites that don't publish one |
-| [**AxeAI**](https://ai.axesuite.tech) | AxeBot, the assistant inside the apps, and an MCP server so Claude, ChatGPT or Cursor can work with your AxeSuite data |
-| [**Axe Home**](https://home.axesuite.tech) and [**AxeTips**](https://tips.axesuite.tech) | The front door (sign-in for every app, a dashboard, the blog, payments) and the user guides |
-| **AxeSuite Desktop** | An Electron app for macOS, Windows and Linux that holds AxeAI, AxeDSA and AxeTasker in one window, works offline, and brings local coding agents (Claude Code, Codex, Antigravity) into AxeAI's chat |
+| [**AxeTasker**](https://tasker.axesuite.tech) | A week-by-week planner with task cards, timers, streaks and notes |
+| [**AxeDSA**](https://dsa.axesuite.tech) | Tracks your LeetCode, Codeforces and HackerRank practice, with ready-made problem packs |
+| [**Axe Design**](https://design.axesuite.tech) | System design practice. You draw an architecture and a simulator load-tests it |
+| [**AxeFeed**](https://feed.axesuite.tech) | A calm daily feed of blogs, newsletters and papers. Paste any link and it finds the feed |
+| [**AxeAI**](https://ai.axesuite.tech) | AxeBot, the assistant inside the apps, plus an MCP server so Claude, ChatGPT or Cursor can use your data |
+| [**Axe Home**](https://home.axesuite.tech) and [**AxeTips**](https://tips.axesuite.tech) | Sign-in, dashboard, blog and payments, and the user guides |
+| **AxeSuite Desktop** | An Electron app for macOS, Windows and Linux. It holds AxeAI, AxeDSA and AxeTasker, works offline, and lets you chat with Claude Code, Codex or Antigravity inside AxeAI |
 
-**How it's built**
+```mermaid
+flowchart LR
+    you([You]) -->|sign in once| home[Axe Home]
+    home -->|one session for every app| apps
+    subgraph apps [Apps on axesuite.tech]
+        direction TB
+        tasker[AxeTasker]
+        dsa[AxeDSA]
+        design[Axe Design]
+        feed[AxeFeed]
+    end
+    llm([Claude, ChatGPT, Cursor]) -->|MCP + OAuth 2.1| ai[AxeAI<br/>AxeBot + MCP server]
+    ai -->|app actions| tasker
+    ai --> dsa
+    ai --> design
+    desktop[AxeSuite Desktop<br/>Electron + local agents] --> apps
+    apps --- db[(Postgres)]
+```
 
-- **One sign-in for every app.** Google sign-in, handled by Axe Home, starts one session that every `*.axesuite.tech` app shares, and signing out anywhere signs you out everywhere. The desktop app signs in through the system browser (OAuth for native apps, RFC 8252, with PKCE).
-- **The AI follows each app's own rules.** Every app publishes what can be done to its data as named actions typed with JSON Schema. The app's pages and the AI call the same actions; AxeAI calls them on a user's behalf with short-lived, Ed25519-signed service tokens, so no business logic is copied into the AI service.
-- **A remote MCP server with OAuth 2.1** (dynamic client registration, PKCE, rotating refresh tokens, per-app scopes) serves 40 tools. AxeBot runs on LangChain and LangGraph, on whichever model and API key the user picks: Anthropic, OpenAI, Google or xAI.
-- **Offline, like Google Docs.** AxeTasker, AxeDSA and AxeAI open with no network (a service worker plus a per-user copy on the device). Changes made offline survive restarts and sync on their own when the connection is back.
-- **A load-test engine for system design.** 26 problems, each in three stages of growth, built from 16 component types. The engine routes every request type through your design and computes each component's load, p99 latency with queueing delay, availability and monthly cost. Any design that holds up passes.
-- **Feeds for sites that don't have one.** AxeFeed reads RSS, Atom and JSON Feed, and falls back to sitemaps or to watching a listing page. Sources are shared between readers, polled with `FOR UPDATE SKIP LOCKED` on intervals set by how often each one publishes, and fetched from public addresses only.
+- **One login for everything.** Sign in once with Google and every app on `*.axesuite.tech` knows it's you. Sign out of one and you're out of all of them. The desktop app signs in through your browser (RFC 8252 with PKCE).
+- **The AI follows the apps' rules.** The apps publish what can be done to their data as typed actions. Their own pages use them, and AxeAI calls the same ones with short-lived signed tokens, so none of that logic gets copied into the AI.
+- **Bring your own AI.** The MCP server (OAuth 2.1, 40 tools) lets Claude, ChatGPT or Cursor work with your stuff. AxeBot runs on LangGraph with whatever model and API key you pick.
+- **Works offline.** Tasker, DSA and AxeAI open without internet, keep your changes on the device and sync them when you're back, a bit like Google Docs.
+- **A load-test simulator.** Axe Design pushes traffic through your design and works out the load on each part, p99 latency, availability and the monthly bill. Any design that holds up passes.
+- **Feeds for sites that don't have one.** AxeFeed falls back to sitemaps, or just watches the page for new links.
 
-Next.js · React · TypeScript · Tailwind CSS · PostgreSQL (Neon) · LangChain · LangGraph · MCP · Electron · Vitest + PGlite · Playwright · Vercel
+Next.js, React, TypeScript, Tailwind, Postgres (Neon), LangChain, LangGraph, MCP, Electron, Vitest, Playwright, Vercel
 
-<sub>The source is private (500+ commits so far), but every web app above is live. Most of my commits land there, which is why my contribution graph is busier than my list of public repos.</sub>
+<sub>The code is private, but every app above is live. Most of my commits go there (500+ so far), which is why my contribution graph looks busier than my public repos.</sub>
 
-## Other projects
+### RCIS
 
-- **[PocketLM][pocketlm]**: an experiment in how much of a language model's worldview comes from its data. I trained eight models on a MacBook, on posts from politically opposed Reddit communities: LiquidAI LFM2-1.2B fine-tuned with LoRA (on MLX and PEFT), and 124M-parameter GPT-2s trained from scratch with nanoGPT. For the from-scratch models, a FAISS semantic-deduplication pass built equal 200 MB corpora for each side. A React and Node front end talks to the Python model server over JSON-RPC to compare answers side by side. Weights are on [Hugging Face][pocketlm-hf].
-- **[GlobalFreight AI][globalfreight]**: built solo for a company-wide AI hackathon at Pratham Software (Intellithon, AI-Fortnight 2026), clearing all four rounds. A logistics platform in four levels, from a RAG policy assistant that cites its sources to an autonomous command centre where Planner, Executor and Auditor agents coordinate through an MCP server under hard safety rules (no more than three cancellations in any ten minutes). Flask, LangGraph, ChromaDB and Next.js 16, on Azure OpenAI with automatic fallback to Gemini.
-- **[vatsalgoyal.com][portfolio]**: my portfolio. Glass hexagons over a single WebGL shader, with no animation or 3D libraries. Next.js 16, React 19 and Tailwind CSS 4, with every page's content in Markdown files that are checked at build time. [Source][portfolio-src].
-- **[JobNest][jobnest]**: a job portal for job seekers, employers and admins, built during my internship at Xebia. MERN, JWT auth, Stripe and Razorpay payments, Socket.io notifications.
-- **[450 House of Sourdough][450]**: client work for an artisanal bakery in Jaipur. A storefront with WhatsApp checkout and a subscription program, plus a local-first Flask and SQLite system for orders, recurring deliveries and B2B accounts ([source][450-backend]).
-- **[Gleck][gleck]** *(in development)*: my personal AI agent. It runs locally and is meant to keep my resumes and portfolio up to date, hunt for jobs, send mail and help with research. LangGraph, LangChain and MCP. It's developed on GitLab for now; releases will land in the GitHub repo.
-- **AxeServer**: a salvaged PC turned into a 24/7 Ubuntu server on Tailscale, where I test agents like Gleck.
-- **AshaKiran**: a website for an NGO, in React, Node and Postgres.
+[RCIS][rcis] is my web development studio. We build websites and the systems behind them, like order management, dashboards and internal tools.
 
-Smaller things: [movie.fy][moviefy] (Flutter), [Flapper][flapper] (a Flappy Bird-style canvas game, packaged for iOS with Capacitor) and a [VS Code setup][vscode-dsa] that runs DSA solutions in seven languages with one shortcut.
+- The studio site is Next.js with no CSS framework, and the night sky behind it is a shader I wrote in raw GLSL. Switch to the light theme and the same sky looks like it was printed on paper.
+- Clients get their own portal to follow their project and message the studio, and partners get one too. There are no sign-ups. The studio issues every account.
+- Our first internal tool, rcisfeeder, turns every coding agent conversation (Claude Code, Codex, Antigravity) into a readable log in a per-project feedback store, so the next session knows what happened. It's the first piece of a toolchain for running client projects with coding agents.
+
+Next.js, TypeScript, GLSL, Supabase, Python
+
+### PocketLM
+
+How much of a model's worldview comes from its data? I trained eight small models on my MacBook, on posts from politically opposite Reddit communities, and compared what they said. Six are LiquidAI's LFM2-1.2B fine-tuned with LoRA (on MLX and PEFT), and two are 124M GPT-2s trained from scratch with nanoGPT. For those two, a FAISS dedup pass kept both datasets clean and the same size. A small React and Node app runs the models side by side.
+
+[Code][pocketlm] and [weights][pocketlm-hf] are open. PyTorch, MLX, LoRA, FAISS, TypeScript
+
+### FT7
+
+My own trading setup on [Flattrade](https://flattrade.in)'s API. FT7 itself is a live market viewer that I packaged as a Mac app with Electron. It shows every raw API reply next to the charts built from it, and it can only read, so it can't touch an order. Around it:
+
+- a Python client, with a fix for a login bug in the NorenRestApi library
+- an intraday momentum bot with hard limits on position size, trades per day and losses, plus a single switch file that blocks every script able to place an order
+- an API recorder that called every endpoint and turned the replies into a PDF report, which is how I found the limit of 10 orders a second
+
+Orders go out through a Tailscale exit node on AWS, so they always come from the IP the broker whitelisted. Not public. Python, Electron, WebSockets, pandas, AWS, Tailscale
+
+### Gleck (in development)
+
+My personal AI agent, still in the works. The idea is that it keeps my resumes and portfolio up to date, hunts for jobs, sends mail and helps with research, all running locally. LangGraph, LangChain and MCP. I'm building it on GitLab for now and releases will land in [the GitHub repo][gleck].
+
+<details>
+<summary><b>Other stuff I've built</b></summary>
+
+- **[GlobalFreight AI][globalfreight]**: built solo for a company-wide AI hackathon at Pratham Software (Intellithon, AI-Fortnight 2026), where it cleared all four rounds. A logistics platform that goes from a RAG policy assistant up to Planner, Executor and Auditor agents running the network through an MCP server, under hard safety rules. Flask, LangGraph, ChromaDB, Next.js 16.
+- **[vatsalgoyal.com][portfolio]**: my portfolio. Glass hexagons over a single WebGL shader, no animation libraries. [Source][portfolio-src]
+- **[JobNest][jobnest]**: a job portal I built during my internship at Xebia. MERN, JWT auth, Stripe and Razorpay, Socket.io.
+- **[450 House of Sourdough][450]**: client work for a bakery in Jaipur. The storefront, plus a Flask and SQLite system for orders, subscriptions and B2B accounts ([source][450-backend]).
+- **AxeServer**: an old PC I turned into a 24/7 Ubuntu server on Tailscale. It's where I test agents like Gleck.
+- **AshaKiran**: a website for an NGO, built with React, Node and Postgres.
+- Smaller things: [movie.fy][moviefy] (Flutter), [Flapper][flapper] (a Flappy Bird-style game I packaged for iOS with Capacitor) and a [VS Code setup][vscode-dsa] that runs DSA code in seven languages with one shortcut.
+
+</details>
 
 ## Experience
 
-- **Full-stack development intern**, [Pratham Software (PSI)][psi] · Jan – Aug 2026. Built an internal resume and skill-database platform on the PERN stack (SSO, and a skill search managers use to staff projects), led three interns, and built GlobalFreight AI for the company-wide AI hackathon.
-- **IT consultant**, 450 House of Sourdough · Jun – Nov 2025. Built and deployed the bakery's web platform: online orders, payments and inventory.
-- **Full-stack intern**, Xebia · Jun – Jul 2025. Built JobNest.
-- **Part-time web developer**, Digispheres · Jul 2023 – Jul 2024. Built and deployed websites for clients.
-- **Core team member**, JECRC Incubation Centre · 2022 – 2023. Represented the centre's NEC-winning team at IIT Bombay's E-Summit 2023 and helped run SISFS startup evaluation rounds.
+- **Full-stack development intern**, [Pratham Software (PSI)][psi] · Jan to Aug 2026. Built an internal resume and skill-database platform on the PERN stack (SSO, and a skill search managers use to staff projects), led three interns, and built GlobalFreight AI for the company-wide AI hackathon.
+- **IT consultant**, 450 House of Sourdough · Jun to Nov 2025. Built and deployed the bakery's web platform: online orders, payments and inventory.
+- **Full-stack intern**, Xebia · Jun to Jul 2025. Built JobNest.
+- **Part-time web developer**, Digispheres · Jul 2023 to Jul 2024. Built and deployed websites for clients.
+- **Core team member**, JECRC Incubation Centre · 2022 to 2023. Represented the centre's NEC-winning team at IIT Bombay's E-Summit 2023 and helped run SISFS startup evaluation rounds.
 
-**Education:** B.Tech in Computer Science and Engineering (full-stack development specialization), JECRC University, Jaipur · 2022 – 2026
+**Education:** B.Tech in Computer Science and Engineering (full-stack development specialization), JECRC University, Jaipur · 2022 to 2026
 
 ## Achievements and certifications
 
@@ -65,11 +120,13 @@ Smaller things: [movie.fy][moviefy] (Flutter), [Flapper][flapper] (a Flappy Bird
 ## Tools I use
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Cjs%2Cpy%2Ccpp%2Cswift%2Creact%2Cnextjs%2Ctailwind%2Cnodejs%2Cexpress%2Cflask%2Cpostgres%2Cmongodb%2Csqlite%2Cpytorch%2Celectron%2Cflutter%2Cdocker%2Cvercel%2Cgithubactions%2Clinux&theme=dark&perline=11">
-  <img alt="TypeScript, JavaScript, Python, C++, Swift, React, Next.js, Tailwind CSS, Node.js, Express, Flask, PostgreSQL, MongoDB, SQLite, PyTorch, Electron, Flutter, Docker, Vercel, GitHub Actions and Linux" src="https://skillicons.dev/icons?i=ts%2Cjs%2Cpy%2Ccpp%2Cswift%2Creact%2Cnextjs%2Ctailwind%2Cnodejs%2Cexpress%2Cflask%2Cpostgres%2Cmongodb%2Csqlite%2Cpytorch%2Celectron%2Cflutter%2Cdocker%2Cvercel%2Cgithubactions%2Clinux&theme=light&perline=11">
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=ts%2Cjs%2Cpy%2Ccpp%2Cswift%2Creact%2Cnextjs%2Ctailwind%2Cnodejs%2Cexpress%2Cflask%2Cvite%2Cpostgres%2Csupabase%2Cmongodb%2Csqlite%2Cpytorch%2Celectron%2Cflutter%2Caws%2Cvercel%2Cdocker%2Cgithubactions%2Clinux%2Cbash%2Cgit%2Clatex&theme=dark&perline=14">
+  <img alt="TypeScript, JavaScript, Python, C++, Swift, React, Next.js, Tailwind CSS, Node.js, Express, Flask, Vite, PostgreSQL, Supabase, MongoDB, SQLite, PyTorch, Electron, Flutter, AWS, Vercel, Docker, GitHub Actions, Linux, Bash, Git and LaTeX" src="https://skillicons.dev/icons?i=ts%2Cjs%2Cpy%2Ccpp%2Cswift%2Creact%2Cnextjs%2Ctailwind%2Cnodejs%2Cexpress%2Cflask%2Cvite%2Cpostgres%2Csupabase%2Cmongodb%2Csqlite%2Cpytorch%2Celectron%2Cflutter%2Caws%2Cvercel%2Cdocker%2Cgithubactions%2Clinux%2Cbash%2Cgit%2Clatex&theme=light&perline=14">
 </picture>
 
-Also: LangChain, LangGraph, MCP, RAG, MLX, LoRA and PEFT, FAISS, ChromaDB · Radix UI, Tiptap, React Flow, WebGL · Vitest, Playwright · Tailscale, Ubuntu Server
+Also: LangChain, LangGraph, MCP, RAG, MLX, LoRA, FAISS, ChromaDB, WebGL and GLSL, Radix UI, Tiptap, React Flow, Vitest, Playwright, Tailscale and the Agent Client Protocol
+
+## GitHub activity
 
 <p align="center">
   <picture>
@@ -78,25 +135,40 @@ Also: LangChain, LangGraph, MCP, RAG, MLX, LoRA and PEFT, FAISS, ChromaDB · Rad
   </picture>
 </p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/masterunix/masterunix/output/github-snake-dark.svg">
+    <img alt="A snake eating my contribution graph" src="https://raw.githubusercontent.com/masterunix/masterunix/output/github-snake.svg">
+  </picture>
+</p>
+
 ---
 
-Thanks for stopping by. If you're hiring, or want to build something together, [email me][email] or find me on [LinkedIn][linkedin].
+Thanks for stopping by! If you're hiring, or want to build something together, [email me][email] or find me on [LinkedIn][linkedin].
 
 > "Just do it."
+
+<div align="center">
+
+<img src="https://komarev.com/ghpvc/?username=masterunix&label=profile+views&color=8b5cf6&style=flat-square" alt="Profile views">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C3AED,100:2563EB&height=110&section=footer" width="100%" alt="">
+
+</div>
 
 [portfolio]: https://www.vatsalgoyal.com
 [linkedin]: https://www.linkedin.com/in/vatsalgoyal93
 [email]: mailto:vatsalgoyal9999@gmail.com
 [hf]: https://huggingface.co/axe-net
-[axesuite]: https://home.axesuite.tech
+[rcis]: https://rcis-systems.vercel.app
 [pocketlm]: https://github.com/masterunix/PocketLM
 [pocketlm-hf]: https://huggingface.co/axe-net/PocketLM
+[gleck]: https://github.com/masterunix/gleck
 [globalfreight]: https://github.com/masterunix/FOURTH-AGENT
 [portfolio-src]: https://github.com/masterunix/portfolio-frontend
 [jobnest]: https://github.com/masterunix/JobNest-v1
 [450]: https://450-hos-static.vercel.app
 [450-backend]: https://github.com/masterunix/450Backend
-[gleck]: https://github.com/masterunix/gleck
 [moviefy]: https://github.com/masterunix/Fluttter-Movie-App
 [flapper]: https://github.com/masterunix/flapper
 [vscode-dsa]: https://github.com/masterunix/VS-Code-DSA-Setup
